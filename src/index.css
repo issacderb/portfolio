@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: light;
+    background-color: #FAF7F2;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #1C1917;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+  
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Vivid Dreamy Sky Atmosphere from Reference Screenshot */
+.sky-hero-backdrop {
+  background: linear-gradient(180deg, #2E65DA 0%, #4D84F0 22%, #8682F2 48%, #B896F8 68%, #EDB3D5 85%, #F7C4B0 100%);
+}
+
+.sky-contact-backdrop {
+  background: linear-gradient(180deg, #10182B 0%, #203B75 25%, #4C72D6 50%, #9A87EE 75%, #F0B7D8 100%);
+}
+
+/* Noise texture overlay for high-end editorial grain */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Editorial display typography styles */
+.editorial-serif {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-variation-settings: 'opsz' 72, 'SOFT' 50, 'WONK' 0;
+}
+
+.oversized-display {
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+}
