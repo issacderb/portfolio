@@ -39,6 +39,9 @@ export default {
         serif: ['Fraunces', 'Playfair Display', 'Georgia', 'serif'],
         sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Syne', 'Plus Jakarta Sans', 'sans-serif'],
+        pixel: ['"Pixelify Sans"', 'cursive', 'sans-serif'],
+        silkscreen: ['"Silkscreen"', 'monospace'],
+        mono: ['"Pixelify Sans"', 'ui-monospace', 'monospace'],
       },
       animation: {
         'float-slow': 'float 6s ease-in-out infinite',

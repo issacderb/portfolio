@@ -30,13 +30,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadCv }) => {
           href="#hero"
           className="group flex items-center space-x-2 text-[#1C1917] hover:opacity-75 transition-opacity"
         >
-          <span className="font-mono text-xs tracking-widest uppercase font-semibold">
+          <span className="font-pixel text-xs tracking-wider uppercase font-semibold">
             {authorData.name}
           </span>
         </a>
 
         {/* Minimal Navigation: VỀ TÔI / DỰ ÁN / TÔI LÀM GÌ / LIÊN HỆ */}
-        <nav className="hidden md:flex items-center space-x-8 text-xs font-mono tracking-widest uppercase text-[#57534E]">
+        <nav className="hidden md:flex items-center space-x-8 text-xs font-pixel tracking-wider uppercase text-[#57534E]">
           <a href="#about" className="hover:text-[#1C1917] transition-colors">
             VỀ TÔI
           </a>
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadCv }) => {
         <div>
           <button
             onClick={onDownloadCv}
-            className="px-4 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase border border-[#1C1917]/30 hover:border-[#1C1917] bg-[#FAF7F2]/80 hover:bg-[#1C1917] text-[#1C1917] hover:text-white transition-all duration-200 cursor-pointer shadow-xs"
+            className="px-4 py-1.5 rounded-full text-xs font-pixel tracking-wider uppercase border border-[#1C1917]/30 hover:border-[#1C1917] bg-[#FAF7F2]/80 hover:bg-[#1C1917] text-[#1C1917] hover:text-white transition-all duration-200 cursor-pointer shadow-xs"
           >
             TẢI CV
           </button>

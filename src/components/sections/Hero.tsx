@@ -1,217 +1,76 @@
-import React, { useState } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { authorData } from '../../data/portfolioData';
-import { LivingMonitor } from '../hero/LivingMonitor';
 
 interface HeroProps {
   onDownloadCv: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { width, height, left, top } = currentTarget.getBoundingClientRect();
-    const x = (clientX - left) / width - 0.5;
-    const y = (clientY - top) / height - 0.5;
-    setMousePos({ x, y });
+  const toggleAudio = () => {
+    if (!videoRef.current) return;
+    if (isMuted) {
+      videoRef.current.muted = false;
+      videoRef.current.volume = 0.08; // 8% low volume target (approx 5-10%)
+      setIsMuted(false);
+    } else {
+      videoRef.current.muted = true;
+      setIsMuted(true);
+    }
   };
-
-  // Smooth springs for mouse parallax
-  const springConfig = { damping: 45, stiffness: 80 };
-  const smoothX = useSpring(mousePos.x, springConfig);
-  const smoothY = useSpring(mousePos.y, springConfig);
-
-  // Parallax layer offsets
-  const bgX = useTransform(smoothX, [-0.5, 0.5], [-8, 8]);
-  const bgY = useTransform(smoothY, [-0.5, 0.5], [-6, 6]);
-
-  const filmX = useTransform(smoothX, [-0.5, 0.5], [-22, 22]);
-  const filmY = useTransform(smoothY, [-0.5, 0.5], [-16, 16]);
-
-  const photosX = useTransform(smoothX, [-0.5, 0.5], [-32, 32]);
-  const photosY = useTransform(smoothY, [-0.5, 0.5], [-20, 20]);
-
-  // Scroll parallax interaction (cinematic camera pullback)
-  const { scrollY } = useScroll();
-  const sceneScale = useTransform(scrollY, [0, 600], [1, 0.95]);
-  const sceneBackdropY = useTransform(scrollY, [0, 600], [0, 45]);
-  const textScrollY = useTransform(scrollY, [0, 600], [0, -60]);
-  const filmScrollY = useTransform(scrollY, [0, 600], [0, -110]);
-  const photosScrollY = useTransform(scrollY, [0, 600], [0, -90]);
-
-  // Combined mouse parallax + scroll offsets
-  const combinedFilmY = useTransform([filmY, filmScrollY], ([my, sy]: number[]) => my + sy);
-  const combinedPhotosY = useTransform([photosY, photosScrollY], ([my, sy]: number[]) => my + sy);
 
   return (
     <section
       id="hero"
-      onMouseMove={handleMouseMove}
       className="relative w-full min-h-screen lg:h-screen flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 px-6 sm:px-10 md:px-16 bg-[#FAF7F2] text-[#1C1917] overflow-hidden"
     >
       {/* ============================================================== */}
-      {/* 2.5D INTERACTIVE CINEMATIC WORKSPACE SCENE (DESKTOP)           */}
+      {/* Z-0: HERO VIDEO VISUAL (0927.mp4 Loop - Desktop Full-Bleed)    */}
       {/* ============================================================== */}
-      <div className="hidden lg:block absolute inset-0 pointer-events-none select-none z-0 overflow-hidden">
-        {/* Master Camera Container with Scroll Pullback & Mouse Parallax */}
-        <motion.div
-          style={{
-            scale: sceneScale,
-            y: sceneBackdropY,
-          }}
-          className="relative w-full h-full"
-        >
-          {/* LAYER 1: BASE WORKSPACE (Sky, Windows, Desk, Camera, Monitor Bezel) */}
-          <motion.div
-            style={{
-              x: bgX,
-              y: bgY,
-            }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <img
-              src="/assets/visuals/01-hero-workspace.png"
-              alt="3D Cinematic Creative Workspace - Vương Thành Trung"
-              className="w-full h-full object-cover object-[65%_center]"
-            />
+      <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+        <video
+          ref={videoRef}
+          src="/assets/videos/hero-0927.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center"
+        />
 
-            {/* LIVING MONITOR: Superimposed directly on the DaVinci Resolve editing screen */}
-            <div className="absolute top-[31.0%] left-[71.2%] w-[17.5%] h-[35.0%] z-10 pointer-events-none">
-              <LivingMonitor />
-            </div>
-          </motion.div>
-
-          {/* LAYER 2: SUSPENDED FILM STRIP (Stronger Parallax + Subtle Floating Breathing Motion) */}
-          <motion.div
-            style={{
-              x: filmX,
-              y: combinedFilmY,
-            }}
-            className="absolute top-0 right-[28.0%] w-[23%] h-[42%] z-20 pointer-events-none"
-          >
-            <motion.div
-              animate={{
-                y: [-3, 3, -3],
-                rotate: [-0.4, 0.4, -0.4],
-              }}
-              transition={{
-                duration: 7,
-                ease: 'easeInOut',
-                repeat: Infinity,
-              }}
-              className="w-full h-full"
-            >
-              <img
-                src="/assets/visuals/hero-film-arch.png"
-                alt="Floating 35mm film strip"
-                className="w-full h-auto object-contain opacity-95 drop-shadow-md"
-              />
-            </motion.div>
-          </motion.div>
-
-          {/* LAYER 3: FLOATING PHOTOGRAPHS & PAPER NOTES (Highest Parallax + Pendulum Sway) */}
-          <motion.div
-            style={{
-              x: photosX,
-              y: combinedPhotosY,
-            }}
-            className="absolute inset-0 z-30 pointer-events-none"
-          >
-            {/* Center Polaroid Photo (City sunset street) */}
-            <motion.div
-              animate={{
-                y: [-2, 2.5, -2],
-                rotate: [-0.6, 0.6, -0.6],
-              }}
-              transition={{
-                duration: 5.8,
-                ease: 'easeInOut',
-                repeat: Infinity,
-              }}
-              className="absolute top-[42.0%] left-[51.5%] w-[8.2%] drop-shadow-lg"
-            >
-              <img
-                src="/assets/visuals/hero-photo-center.png"
-                alt="Hanging polaroid photography"
-                className="w-full h-auto object-contain"
-              />
-            </motion.div>
-
-            {/* Top Paper Note (Idea sketches) */}
-            <motion.div
-              animate={{
-                y: [-2.5, 2, -2.5],
-                rotate: [0.5, -0.5, 0.5],
-              }}
-              transition={{
-                duration: 6.4,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                delay: 0.5,
-              }}
-              className="absolute top-[18.0%] left-[48.0%] w-[8.8%] drop-shadow-md"
-            >
-              <img
-                src="/assets/visuals/hero-note-sketch.png"
-                alt="Pinned paper sketch note"
-                className="w-full h-auto object-contain"
-              />
-            </motion.div>
-
-            {/* Left Paper Note (Text checklist) */}
-            <motion.div
-              animate={{
-                y: [-1.8, 2.2, -1.8],
-                rotate: [-0.5, 0.5, -0.5],
-              }}
-              transition={{
-                duration: 6.0,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                delay: 1.2,
-              }}
-              className="absolute top-[36.0%] left-[44.5%] w-[7.8%] drop-shadow-md"
-            >
-              <img
-                src="/assets/visuals/hero-note-text.png"
-                alt="Editorial checklist note"
-                className="w-full h-auto object-contain"
-              />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-        {/* Localized contrast gradient strictly behind typography on the left.
-            Stops cleanly at 42% so the center monitor, camera, notes & skyline have ZERO haze or washout! */}
-        <div className="absolute inset-y-0 left-0 w-[42%] bg-gradient-to-r from-[#FAF7F2] via-[#FAF7F2]/80 via-[32%] to-transparent pointer-events-none z-35" />
-        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#FAF7F2] to-transparent pointer-events-none z-35" />
+        {/* Z-10: Subtle localized readability overlay strictly behind text on the left */}
+        <div className="absolute inset-y-0 left-0 w-[42%] lg:w-[38%] xl:w-[34%] bg-gradient-to-r from-[#FAF7F2]/95 via-[#FAF7F2]/80 via-[40%] to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FAF7F2] to-transparent pointer-events-none z-10" />
       </div>
 
       {/* ============================================================== */}
-      {/* TEXT LAYER: EDITORIAL TYPOGRAPHY                               */}
+      {/* Z-30: HERO TEXT & CONTENT (Subtle HTML reveal)                 */}
       {/* ============================================================== */}
       <motion.div
-        style={{ y: textScrollY }}
-        className="relative z-40 max-w-7xl mx-auto w-full my-auto py-6 sm:py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="relative z-30 max-w-7xl mx-auto w-full my-auto py-6 sm:py-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
       >
-        {/* Left: Editorial Typography */}
-        <div className="lg:col-span-6 flex flex-col items-start space-y-6">
+        {/* Left Column: Typography & CTAs (Bounded so monitor & creator stay 100% visible) */}
+        <div className="lg:col-span-5 xl:col-span-5 max-w-md lg:max-w-[420px] flex flex-col items-start space-y-5">
           {/* Greeting */}
           <div className="text-xs sm:text-sm font-sans text-[#78716C] tracking-wide">
             {authorData.greeting}
           </div>
 
           {/* Large Editorial Name */}
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[4.75rem] font-bold tracking-tight text-[#1C1917] leading-[1.02]">
+          <h1 className="font-serif text-5xl sm:text-6xl lg:text-[3.6rem] xl:text-[4.1rem] font-bold tracking-tight text-[#1C1917] leading-[1.02]">
             VƯƠNG <br />
             THÀNH TRUNG
           </h1>
 
-          {/* Subtitle & Positioning */}
+          {/* Subtitle & Positioning with Pixel Font Accent */}
           <div className="space-y-1.5 pt-1">
-            <p className="font-mono text-xs sm:text-sm font-semibold tracking-widest text-[#C85A32] uppercase">
+            <p className="font-pixel text-xs sm:text-sm font-semibold tracking-wider text-[#C85A32] uppercase">
               {authorData.major}
             </p>
             <p className="font-serif italic text-lg sm:text-xl lg:text-2xl text-[#292524] font-normal leading-snug">
@@ -224,11 +83,11 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
             {authorData.intro}
           </p>
 
-          {/* Actions: XEM DỰ ÁN & TẢI CV */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          {/* Z-40: CTAs */}
+          <div className="flex flex-wrap items-center gap-4 pt-2 z-40">
             <a
               href="#projects"
-              className="px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-sm"
+              className="px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-pixel text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-sm"
             >
               <span>XEM DỰ ÁN</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
 
             <button
               onClick={onDownloadCv}
-              className="px-7 py-3 rounded-full bg-[#FAF7F2]/90 backdrop-blur-md hover:bg-[#1C1917] text-[#1C1917] hover:text-white border border-[#1C1917]/30 hover:border-[#1C1917] font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-xs"
+              className="px-7 py-3 rounded-full bg-[#FAF7F2]/90 backdrop-blur-md hover:bg-[#1C1917] text-[#1C1917] hover:text-white border border-[#1C1917]/30 hover:border-[#1C1917] font-pixel text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-xs"
             >
               <span>TẢI CV</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -248,29 +107,45 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
           </div>
         </div>
 
-        {/* Right column on desktop is deliberately transparent to let the full-scale workspace image breathe */}
-        <div className="hidden lg:block lg:col-span-6" aria-hidden="true" />
+        {/* Right column on desktop remains open to showcase the video */}
+        <div className="hidden lg:block lg:col-span-7 xl:col-span-7" aria-hidden="true" />
 
-        {/* Mobile View: Large visual presentation */}
+        {/* Mobile View: Preserve complete 16:9 framing without cropping */}
         <div className="block lg:hidden mt-6 w-full">
-          <div className="relative rounded-xl overflow-hidden border border-[#E7E2DA] shadow-md bg-[#F5F2EB]">
-            <img
-              src="/assets/visuals/01-hero-workspace.png"
-              alt="Creative Workspace"
-              className="w-full aspect-[4/3] object-cover object-[65%_center]"
+          <div className="relative rounded-2xl overflow-hidden border border-[#E7E2DA] shadow-lg bg-[#FAF7F2] aspect-video">
+            <video
+              src="/assets/videos/hero-0927.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain bg-black/90"
             />
           </div>
         </div>
       </motion.div>
 
-      {/* Bottom Metadata Bar */}
-      <div className="relative z-40 max-w-7xl mx-auto w-full pt-4 border-t border-[#E7E2DA]/80 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-[#78716C] gap-3">
-        <div className="px-3 py-1 rounded-full bg-[#FAF7F2]/90 backdrop-blur-xs border border-[#E7E2DA]/60">
-          <span>{authorData.university.toUpperCase()} · GPA {authorData.gpa}</span>
+      {/* ============================================================== */}
+      {/* BOTTOM METADATA BAR (Pixel font accents + Audio toggle)       */}
+      {/* ============================================================== */}
+      <div className="relative z-40 max-w-7xl mx-auto w-full pt-4 border-t border-[#E7E2DA]/80 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-pixel text-[#78716C] gap-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="px-3 py-1 rounded-full bg-[#FAF7F2]/90 backdrop-blur-xs border border-[#E7E2DA]/60">
+            <span>{authorData.university.toUpperCase()} · GPA {authorData.gpa}</span>
+          </div>
+          <div className="px-3 py-1 rounded-full bg-[#FAF7F2]/90 backdrop-blur-xs border border-[#E7E2DA]/60">
+            <span className="tracking-wider uppercase">TRUYỀN THÔNG ĐA PHƯƠNG TIỆN · 2026</span>
+          </div>
         </div>
-        <div className="px-3 py-1 rounded-full bg-[#FAF7F2]/90 backdrop-blur-xs border border-[#E7E2DA]/60">
-          <span className="tracking-widest uppercase">TRUYỀN THÔNG ĐA PHƯƠNG TIỆN · 2026</span>
-        </div>
+
+        {/* Extremely small, unobtrusive ambient audio toggle */}
+        <button
+          onClick={toggleAudio}
+          className="px-3 py-1 rounded-full bg-[#1C1917]/80 hover:bg-[#1C1917] text-white/90 hover:text-white font-pixel text-[11px] tracking-wider transition-colors flex items-center space-x-1.5 cursor-pointer shadow-xs border border-white/10"
+          title={isMuted ? "Bật âm thanh nền (8% âm lượng)" : "Tắt tiếng"}
+        >
+          <span>{isMuted ? "🔇 SOUND: OFF" : "🔊 SOUND: 8%"}</span>
+        </button>
       </div>
     </section>
   );

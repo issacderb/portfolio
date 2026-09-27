@@ -38,13 +38,13 @@ export const SkillsSection: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-28 lg:py-36 px-6 sm:px-10 md:px-16 bg-[#F5F2EB] text-[#1C1917] border-t border-[#E7E2DA]"
+      className="py-24 lg:py-32 px-6 sm:px-10 md:px-16 bg-[#F5F2EB] text-[#1C1917] border-t border-[#E7E2DA]"
     >
-      <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24">
+      <div className="max-w-7xl mx-auto space-y-16 lg:space-y-20">
         {/* Section Masthead */}
         <div className="border-b border-[#E7E2DA] pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="font-mono text-xs tracking-widest uppercase text-[#78716C] block">
+            <span className="font-pixel text-xs tracking-wider uppercase text-[#78716C] block">
               03 / KỸ NĂNG & CÔNG CỤ
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917]">
@@ -56,68 +56,84 @@ export const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Pure Typographic Editorial Architecture (No Redundant Image) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
-          {/* Left Column: 6 Core Capabilities in Open Editorial Grid */}
-          <div className="lg:col-span-7 space-y-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#C85A32] font-semibold block">
-              CÁC MẢNG NĂNG LỰC CHUYÊN MÔN
-            </span>
+        {/* Editorial Architecture: Capabilities & Tools (Left) | Asset 003 (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: 6 Capabilities & 4 Tools */}
+          <div className="lg:col-span-6 space-y-10">
+            {/* 6 Capabilities */}
+            <div className="space-y-6">
+              <span className="font-pixel text-xs uppercase tracking-wider text-[#C85A32] font-semibold block">
+                CÁC MẢNG NĂNG LỰC CHUYÊN MÔN
+              </span>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 pt-2">
-              {capabilities.map((cap) => (
-                <div key={cap.num} className="space-y-2 border-t border-[#E7E2DA] pt-4">
-                  <div className="flex items-center space-x-2 text-xs font-mono text-[#78716C]">
-                    <span className="text-[#C85A32] font-semibold">{cap.num}</span>
-                    <span>/</span>
-                    <span className="uppercase tracking-wider">LĨNH VỰC</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 pt-2">
+                {capabilities.map((cap) => (
+                  <div key={cap.num} className="space-y-1.5 border-t border-[#E7E2DA] pt-3.5">
+                    <div className="flex items-center space-x-2 text-xs font-pixel text-[#78716C]">
+                      <span className="text-[#C85A32] font-semibold">{cap.num}</span>
+                      <span>/</span>
+                      <span className="uppercase tracking-wider">LĨNH VỰC</span>
+                    </div>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1C1917]">
+                      {cap.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed font-sans font-light">
+                      {cap.desc}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#1C1917]">
-                    {cap.title}
-                  </h3>
-                  <p className="text-sm text-[#57534E] leading-relaxed font-sans font-light">
-                    {cap.desc}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* 4 Software Tools */}
+            <div className="pt-4 border-t border-[#E7E2DA] space-y-4">
+              <span className="font-pixel text-xs uppercase tracking-wider text-[#C85A32] font-semibold block">
+                CÔNG CỤ THỰC CHIẾN
+              </span>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                {softwareTools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="flex items-center space-x-3.5 p-3 rounded-xl bg-[#FAF7F2] border border-[#E7E2DA]/80 shadow-2xs hover:border-[#C85A32]/40 transition-colors"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-white border border-[#E7E2DA] flex items-center justify-center shrink-0 shadow-2xs">
+                      <img
+                        src={tool.iconSrc}
+                        alt={tool.name}
+                        className="w-5 h-5 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-sm font-bold text-[#1C1917] leading-tight">
+                        {tool.name}
+                      </h4>
+                      <p className="font-sans text-[11px] text-[#78716C]">
+                        {tool.category}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Software Tools with Real Official SVGs */}
-          <div className="lg:col-span-5 space-y-8 lg:border-l lg:border-[#E7E2DA] lg:pl-16">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#C85A32] font-semibold block">
-              CÔNG CỤ THỰC CHIẾN
-            </span>
-
-            <div className="space-y-6 pt-2">
-              {softwareTools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex items-start space-x-4 p-4 rounded-xl hover:bg-[#EFE9DF] transition-colors"
-                >
-                  <div className="w-11 h-11 rounded-lg bg-white border border-[#E7E2DA] flex items-center justify-center shrink-0 shadow-xs">
-                    <img
-                      src={tool.iconSrc}
-                      alt={tool.name}
-                      className="w-6 h-6 object-contain"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <h4 className="font-serif text-lg font-bold text-[#1C1917]">
-                      {tool.name}
-                    </h4>
-                    <p className="text-xs font-sans text-[#78716C] leading-snug">
-                      {tool.category}
-                    </p>
-                  </div>
-                </div>
-              ))}
+          {/* Right Column: Asset 003 displayed at large editorial scale (100% intact, no crop) */}
+          <div className="lg:col-span-6 w-full lg:sticky lg:top-28">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-[#E7E2DA] bg-[#EFE9DF] group">
+              <img
+                src="/assets/visuals/003.png"
+                alt="Quy trình sản xuất đa phương tiện 7 bước - Vương Thành Trung"
+                className="w-full h-auto object-contain block"
+              />
+              <div className="absolute bottom-4 left-4 sm:left-6 px-3.5 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md text-white font-pixel text-[11px] tracking-wider pointer-events-none border border-white/10">
+                Quy trình sáng tạo: IDEA → SCRIPT → SHOOT → EDIT → COLOR → SOUND → PUBLISH
+              </div>
             </div>
 
-            {/* Editorial Note */}
-            <div className="pt-6 border-t border-[#E7E2DA] text-xs font-mono text-[#78716C] leading-relaxed">
-              * Sử dụng thành thạo quy trình làm việc kết hợp giữa phần mềm dựng phim DaVinci Resolve, xử lý hình ảnh Photoshop và thiết kế ấn phẩm số trên Canva.
-            </div>
+            <p className="mt-4 text-xs font-pixel text-[#78716C] tracking-wide leading-relaxed">
+              * Quy trình làm việc thực chiến kết hợp liên hoàn giữa kịch bản, quay chụp, dựng DaVinci Resolve, xử lý hình ảnh Photoshop và hoàn thiện xuất bản trên Canva.
+            </p>
           </div>
         </div>
       </div>
