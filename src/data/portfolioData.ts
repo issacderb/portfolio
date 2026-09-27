@@ -155,17 +155,17 @@ export const projectsList: ProjectDetail[] = [
 
 export const posterDesigns: PosterItem[] = [
   {
-    id: 'poster-chuk',
-    title: 'Chuk Tea & Coffee',
-    category: 'Poster F&B / Quảng cáo sản phẩm',
-    image: '/assets/posters/poster-chuk-tea.png',
+    id: 'banner-food-final',
+    title: 'Cơm Thố Siêu Ngon',
+    category: 'Poster F&B / ShopeeFood',
+    image: '/assets/posters/banner-food-final.png',
     software: 'Photoshop'
   },
   {
-    id: 'poster-tham-my',
-    title: 'Thẩm mỹ viện — Brand Visual',
-    category: 'Bộ nhận diện thương hiệu / Quảng cáo',
-    image: '/assets/posters/poster-tham-my.png',
+    id: 'poster-trung-thu',
+    title: 'Đón Trăng Tỏa Sáng Nhan Sắc',
+    category: 'Banner Sự kiện / Trung Thu',
+    image: '/assets/posters/poster-trung-thu.png',
     software: 'Photoshop'
   },
   {
