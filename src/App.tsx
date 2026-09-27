@@ -19,7 +19,7 @@ export const App: React.FC = () => {
     link.click();
     document.body.removeChild(link);
 
-    setCvNotification('Đang tải xuống CV: ' + authorData.cvUrl);
+    setCvNotification('Đang tải xuống CV: Vuong-Thanh-Trung-CV.pdf');
     setTimeout(() => setCvNotification(null), 4000);
   };
 
