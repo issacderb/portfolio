@@ -51,14 +51,14 @@ export const FeaturedProjects: React.FC = () => {
         {/* Section Masthead */}
         <div className="border-b border-[#E7E2DA] pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="font-mono text-xs tracking-widest uppercase text-[#78716C] block">
-              02 / DỰ ÁN
+            <span className="font-pixel text-xs tracking-widest text-[#C85A32] uppercase block">
+              [ 03 / DỰ ÁN ]
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917]">
               Sản phẩm chọn lọc
             </h2>
           </div>
-          <span className="font-mono text-xs text-[#78716C] uppercase tracking-wider">
+          <span className="font-sans text-xs font-semibold text-[#78716C] uppercase tracking-wider">
             VIDEO 9:16 · BIÊN TẬP · INFOGRAPHIC · WEB INTERACTIVE · POSTER
           </span>
         </div>
@@ -66,16 +66,16 @@ export const FeaturedProjects: React.FC = () => {
         {/* ============================================================== */}
         {/* 01 & 02 — PAIRED VERTICAL 9:16 VIDEOS (OPEN EDITORIAL SPREAD)   */}
         {/* ============================================================== */}
-        <div className="space-y-8">
+        <div className="space-y-8 font-sans">
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-[#E7E2DA]/80 pb-4">
-            <div className="flex items-center space-x-3 text-xs font-mono text-[#78716C]">
-              <span className="font-bold text-[#1C1917] text-base">01 & 02</span>
+            <div className="flex items-center space-x-3 text-xs text-[#78716C]">
+              <span className="font-pixel font-bold text-[#1C1917] text-base">01 & 02</span>
               <span>/</span>
-              <span className="uppercase tracking-widest text-[#C85A32] font-semibold">
+              <span className="font-pixel uppercase tracking-widest text-[#C85A32] text-xs font-semibold">
                 VIDEO / TALKING HEAD (9:16 DỌC)
               </span>
             </div>
-            <span className="text-xs font-mono text-[#78716C]">
+            <span className="font-pixel text-[11px] text-[#78716C] uppercase tracking-wider">
               ĐỊNH DẠNG DỌC TỐI ƯU NỀN TẢNG SỐ
             </span>
           </div>
@@ -92,7 +92,7 @@ export const FeaturedProjects: React.FC = () => {
                   poster={p1.thumbnail}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-mono text-white flex items-center space-x-1.5 pointer-events-none">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-pixel uppercase tracking-wider text-white flex items-center space-x-1.5 pointer-events-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                   <span>9:16 DỌC</span>
                 </div>
@@ -100,22 +100,22 @@ export const FeaturedProjects: React.FC = () => {
 
               {/* Minimal Text Presentation */}
               <div className="max-w-[360px] sm:max-w-[380px] mx-auto space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
-                  <span className="text-[#C85A32] font-semibold tracking-wider uppercase">
+                <div className="flex items-center justify-between text-xs text-[#78716C]">
+                  <span className="font-pixel text-[#C85A32] font-semibold text-xs tracking-wider uppercase">
                     {p1.category}
                   </span>
-                  <span>{p1.duration}</span>
+                  <span className="font-medium">{p1.duration}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#1C1917] leading-snug">
+                <h3 className="font-serif text-2xl font-bold text-[#1C1917] leading-snug tracking-tight">
                   {p1.title}
                 </h3>
 
-                <p className="text-sm text-[#44403C] leading-relaxed font-sans font-light">
+                <p className="text-sm text-[#44403C] leading-relaxed font-light">
                   {p1.shortDesc}
                 </p>
 
-                <div className="pt-1 flex flex-wrap gap-2 text-xs font-mono text-[#78716C]">
+                <div className="pt-1 flex flex-wrap gap-2 text-xs font-medium text-[#78716C]">
                   {p1.focus.map((tag, i) => (
                     <span key={i} className="px-2.5 py-1 rounded bg-[#EBE6DC] text-[#44403C]">
                       {tag}
@@ -136,7 +136,7 @@ export const FeaturedProjects: React.FC = () => {
                   poster={p2.thumbnail}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-mono text-white flex items-center space-x-1.5 pointer-events-none">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-pixel uppercase tracking-wider text-white flex items-center space-x-1.5 pointer-events-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                   <span>9:16 DỌC</span>
                 </div>
@@ -144,22 +144,22 @@ export const FeaturedProjects: React.FC = () => {
 
               {/* Minimal Text Presentation */}
               <div className="max-w-[360px] sm:max-w-[380px] mx-auto space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
-                  <span className="text-[#C85A32] font-semibold tracking-wider uppercase">
+                <div className="flex items-center justify-between text-xs text-[#78716C]">
+                  <span className="font-pixel text-[#C85A32] font-semibold text-xs tracking-wider uppercase">
                     {p2.category}
                   </span>
-                  <span>{p2.duration}</span>
+                  <span className="font-medium">{p2.duration}</span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-[#1C1917] leading-snug">
+                <h3 className="font-serif text-2xl font-bold text-[#1C1917] leading-snug tracking-tight">
                   {p2.title}
                 </h3>
 
-                <p className="text-sm text-[#44403C] leading-relaxed font-sans font-light">
+                <p className="text-sm text-[#44403C] leading-relaxed font-light">
                   {p2.shortDesc}
                 </p>
 
-                <div className="pt-1 flex flex-wrap gap-2 text-xs font-mono text-[#78716C]">
+                <div className="pt-1 flex flex-wrap gap-2 text-xs font-medium text-[#78716C]">
                   {p2.focus.map((tag, i) => (
                     <span key={i} className="px-2.5 py-1 rounded bg-[#EBE6DC] text-[#44403C]">
                       {tag}
@@ -178,17 +178,17 @@ export const FeaturedProjects: React.FC = () => {
           {/* Header Info */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             <div className="lg:col-span-8 space-y-2">
-              <div className="flex items-center space-x-3 text-xs font-mono text-[#78716C]">
-                <span className="font-bold text-[#1C1917] text-base">{p3.number}</span>
+              <div className="flex items-center space-x-3 text-xs text-[#78716C]">
+                <span className="font-pixel font-bold text-[#1C1917] text-base">{p3.number}</span>
                 <span>/</span>
-                <span className="uppercase tracking-widest text-[#C85A32] font-semibold">
+                <span className="font-pixel uppercase tracking-widest text-[#C85A32] text-xs font-semibold">
                   THIẾT KẾ BIÊN TẬP
                 </span>
               </div>
               <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1917]">
                 {p3.title}
               </h3>
-              <p className="font-serif italic text-lg sm:text-xl text-[#292524]">
+              <p className="font-serif italic font-medium text-lg sm:text-xl text-[#292524] leading-snug">
                 "{p3.shortDesc}"
               </p>
             </div>
@@ -198,7 +198,7 @@ export const FeaturedProjects: React.FC = () => {
                 href={p3.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm"
+                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm font-sans"
               >
                 <span>{p3.actionLabel || 'XEM TOÀN BỘ ẤN PHẨM'}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -220,15 +220,15 @@ export const FeaturedProjects: React.FC = () => {
               alt="E-Magazine spread: Bỏ bàn phím, gắp hạt nhựa"
               className="w-full max-h-[82vh] object-contain mx-auto rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
             />
-            <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#78716C]">
-              <span>KẾT Workshop · Canva Digital Publication</span>
+            <div className="mt-3 flex items-center justify-between text-xs text-[#78716C] font-sans">
+              <span className="font-pixel text-[11px] text-[#78716C]">KẾT Workshop · Canva Digital Publication</span>
               <span className="text-[#1C1917] font-semibold underline underline-offset-4">
                 Mở ấn phẩm trên Canva ↗
               </span>
             </div>
           </a>
 
-          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-sans font-light">
+          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-light font-sans">
             {p3.fullDesc}
           </p>
         </div>
@@ -240,17 +240,17 @@ export const FeaturedProjects: React.FC = () => {
           {/* Header Info */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             <div className="lg:col-span-8 space-y-2">
-              <div className="flex items-center space-x-3 text-xs font-mono text-[#78716C]">
-                <span className="font-bold text-[#1C1917] text-base">{p4.number}</span>
+              <div className="flex items-center space-x-3 text-xs text-[#78716C]">
+                <span className="font-pixel font-bold text-[#1C1917] text-base">{p4.number}</span>
                 <span>/</span>
-                <span className="uppercase tracking-widest text-[#C85A32] font-semibold">
+                <span className="font-pixel uppercase tracking-widest text-[#C85A32] text-xs font-semibold">
                   THIẾT KẾ THÔNG TIN
                 </span>
               </div>
               <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1917]">
                 {p4.title}
               </h3>
-              <p className="font-serif italic text-lg sm:text-xl text-[#292524]">
+              <p className="font-serif italic font-medium text-lg sm:text-xl text-[#292524] leading-snug">
                 "{p4.shortDesc}"
               </p>
             </div>
@@ -258,7 +258,7 @@ export const FeaturedProjects: React.FC = () => {
             <div className="lg:col-span-4 flex lg:justify-end">
               <button
                 onClick={handleOpenInfographic}
-                className="px-7 py-3 rounded-full bg-[#1C1917] text-white hover:bg-[#C85A32] font-mono text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer shadow-sm flex items-center space-x-2"
+                className="px-7 py-3 rounded-full bg-[#1C1917] text-white hover:bg-[#C85A32] text-xs font-semibold tracking-wider uppercase transition-colors cursor-pointer shadow-sm flex items-center space-x-2 font-sans"
               >
                 <span>{p4.actionLabel || 'XEM BẢN ĐẦY ĐỦ'}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -278,8 +278,8 @@ export const FeaturedProjects: React.FC = () => {
               alt="Infographic Báo chí dữ liệu - Vương Thành Trung"
               className="w-full max-w-4xl max-h-[88vh] object-contain rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.01]"
             />
-            <div className="mt-3 w-full max-w-4xl flex items-center justify-between text-xs font-mono text-[#78716C]">
-              <span>Báo cáo dòng vốn FDI Việt Nam 2026 · Đồ họa thông tin báo chí</span>
+            <div className="mt-3 w-full max-w-4xl flex items-center justify-between text-xs text-[#78716C] font-sans">
+              <span className="font-pixel text-[11px] text-[#78716C]">Báo cáo dòng vốn FDI Việt Nam 2026 · Đồ họa thông tin báo chí</span>
               <span className="text-[#1C1917] font-semibold underline underline-offset-4 flex items-center space-x-1">
                 <span>Xem bản đầy đủ 100%</span>
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,7 +289,7 @@ export const FeaturedProjects: React.FC = () => {
             </div>
           </div>
 
-          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-sans font-light">
+          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-light font-sans">
             {p4.fullDesc}
           </p>
         </div>
@@ -301,17 +301,17 @@ export const FeaturedProjects: React.FC = () => {
           {/* Header Info */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             <div className="lg:col-span-8 space-y-2">
-              <div className="flex items-center space-x-3 text-xs font-mono text-[#78716C]">
-                <span className="font-bold text-[#1C1917] text-base">{p5.number}</span>
+              <div className="flex items-center space-x-3 text-xs text-[#78716C]">
+                <span className="font-pixel font-bold text-[#1C1917] text-base">{p5.number}</span>
                 <span>/</span>
-                <span className="uppercase tracking-widest text-[#C85A32] font-semibold">
+                <span className="font-pixel uppercase tracking-widest text-[#C85A32] text-xs font-semibold">
                   WEB / INTERACTIVE
                 </span>
               </div>
               <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1917]">
                 {p5.title}
               </h3>
-              <p className="font-serif italic text-lg sm:text-xl text-[#292524]">
+              <p className="font-serif italic font-medium text-lg sm:text-xl text-[#292524] leading-snug">
                 "{p5.shortDesc}"
               </p>
             </div>
@@ -321,7 +321,7 @@ export const FeaturedProjects: React.FC = () => {
                 href={p5.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm"
+                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm font-sans"
               >
                 <span>{p5.actionLabel || 'XEM TRẢI NGHIỆM'}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -341,7 +341,7 @@ export const FeaturedProjects: React.FC = () => {
                 <span className="w-3 h-3 rounded-full bg-[#81B29A]" />
               </div>
 
-              <div className="px-6 py-1.5 rounded-full bg-[#FAF7F2] border border-[#E0D9CB] text-xs font-mono text-[#57534E] w-80 text-center truncate">
+              <div className="px-6 py-1.5 rounded-full bg-[#FAF7F2] border border-[#E0D9CB] text-xs font-pixel text-[#57534E] w-80 text-center truncate">
                 clearpath-beta-six.vercel.app
               </div>
 
@@ -360,13 +360,13 @@ export const FeaturedProjects: React.FC = () => {
                 alt="Clear Path Web Interactive Showcase"
                 className="w-full max-h-[80vh] object-cover object-top transition-transform duration-500 group-hover:scale-[1.01]"
               />
-              <div className="absolute bottom-4 right-5 px-4 py-2 rounded-full bg-[#1C1917]/90 backdrop-blur-md text-white font-mono text-xs shadow-md">
+              <div className="absolute bottom-4 right-5 px-4 py-2 rounded-full bg-[#1C1917]/90 backdrop-blur-md text-white text-xs font-pixel uppercase shadow-md">
                 Mở website trực tiếp ↗
               </div>
             </a>
           </div>
 
-          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-sans font-light">
+          <p className="text-sm sm:text-base text-[#57534E] leading-relaxed max-w-3xl font-light font-sans">
             {p5.fullDesc}
           </p>
         </div>
@@ -378,21 +378,21 @@ export const FeaturedProjects: React.FC = () => {
           {/* Header Info */}
           <div className="border-b border-[#E7E2DA]/80 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-2">
-              <div className="flex items-center space-x-3 text-xs font-mono text-[#78716C]">
-                <span className="font-bold text-[#1C1917] text-base">06</span>
+              <div className="flex items-center space-x-3 text-xs text-[#78716C]">
+                <span className="font-pixel font-bold text-[#1C1917] text-base">06</span>
                 <span>/</span>
-                <span className="uppercase tracking-widest text-[#C85A32] font-semibold">
+                <span className="font-pixel uppercase tracking-widest text-[#C85A32] text-xs font-semibold">
                   THIẾT KẾ ĐỒ HỌA & POSTER
                 </span>
               </div>
               <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1C1917]">
                 Thiết kế Poster & Ấn phẩm
               </h3>
-              <p className="font-serif italic text-lg sm:text-xl text-[#292524]">
+              <p className="font-serif italic font-medium text-lg sm:text-xl text-[#292524] leading-snug">
                 "Poster thương mại, sự kiện và ấn phẩm nhận diện thị giác thực hiện bằng Photoshop."
               </p>
             </div>
-            <span className="font-mono text-xs text-[#78716C] uppercase tracking-wider">
+            <span className="font-pixel text-xs text-[#78716C] uppercase tracking-wider">
               6 TÁC PHẨM CHỌN LỌC · PHOTOSHOP
             </span>
           </div>
@@ -403,7 +403,7 @@ export const FeaturedProjects: React.FC = () => {
               <div
                 key={poster.id}
                 onClick={() => handleOpenPoster(poster)}
-                className="group relative flex flex-col cursor-pointer"
+                className="group relative flex flex-col cursor-pointer font-sans"
               >
                 {/* Poster Artwork Container (Open, No Thick Outer Card) */}
                 <div className="relative w-full aspect-[3/4] bg-[#EFE9DF] rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 p-2">
@@ -412,7 +412,7 @@ export const FeaturedProjects: React.FC = () => {
                     alt={poster.title}
                     className="w-full h-full object-contain rounded-lg transition-transform duration-500 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute top-4 right-4 px-2.5 py-1 rounded bg-[#1C1917]/80 backdrop-blur-md text-[10px] font-mono text-white">
+                  <div className="absolute top-4 right-4 px-2.5 py-1 rounded bg-[#1C1917]/80 backdrop-blur-md text-[10px] font-pixel uppercase tracking-wider text-white">
                     {poster.software}
                   </div>
                 </div>
@@ -420,10 +420,10 @@ export const FeaturedProjects: React.FC = () => {
                 {/* Minimal Poster Caption */}
                 <div className="pt-3 pb-1 flex items-center justify-between">
                   <div>
-                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#1C1917] group-hover:text-[#C85A32] transition-colors">
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#1C1917] group-hover:text-[#C85A32] transition-colors leading-tight">
                       {poster.title}
                     </h4>
-                    <p className="font-sans text-xs text-[#78716C] pt-0.5">
+                    <p className="text-xs text-[#78716C] pt-0.5 font-normal">
                       {poster.category}
                     </p>
                   </div>

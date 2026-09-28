@@ -50,14 +50,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E7E2DA] bg-[#F5F2EB]">
             <div className="flex items-center space-x-3">
-              <span className="px-2.5 py-1 rounded-md bg-[#1C1917] font-mono text-xs font-bold text-[#FAF7F2]">
+              <span className="font-pixel px-2.5 py-1 rounded-md bg-[#1C1917] text-xs font-bold text-[#FAF7F2]">
                 {project.number}
               </span>
               <div>
-                <span className="font-mono text-xs uppercase tracking-wider text-[#78716C] block">
+                <span className="font-pixel text-[11px] uppercase tracking-wider text-[#78716C] font-semibold block">
                   {project.category}
                 </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1C1917] leading-tight">
+                <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-[#1C1917] leading-tight">
                   {project.title}
                 </h3>
               </div>
@@ -97,7 +97,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                       className="max-h-[62vh] object-contain rounded-xl shadow-2xl border border-white/10"
                     />
                   </div>
-                  <p className="mt-3 text-xs font-mono text-[#FAF7F2]">
+                  <p className="mt-3 text-xs font-medium text-[#FAF7F2]">
                     {project.galleryImages[activeImageIndex].caption}
                   </p>
 
@@ -108,7 +108,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                         <button
                           key={idx}
                           onClick={() => setActiveImageIndex(idx)}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                          className={`px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wider transition-all ${
                             activeImageIndex === idx
                               ? 'bg-[#C85A32] text-white font-bold shadow'
                               : 'bg-white/20 text-white hover:bg-white/30'
@@ -134,8 +134,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             {/* Description & Technical Meta */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-2">
               <div className="md:col-span-8 space-y-4">
-                <h4 className="font-serif text-lg font-semibold text-[#1C1917]">Tổng quan dự án</h4>
-                <p className="text-sm sm:text-base text-[#44403C] leading-relaxed font-sans font-normal">
+                <h4 className="font-serif text-lg font-bold tracking-tight text-[#1C1917]">Tổng quan dự án</h4>
+                <p className="text-sm sm:text-base text-[#44403C] leading-relaxed font-normal">
                   {project.fullDesc}
                 </p>
 
@@ -145,7 +145,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                       href={project.externalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs font-semibold tracking-wider uppercase transition-colors"
+                      className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white text-xs font-semibold tracking-wider uppercase transition-colors"
                     >
                       <span>{project.actionLabel || 'TRUY CẬP TRỰC TIẾP'}</span>
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,7 +157,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
                 {project.caseStudyDetails && (
                   <div className="p-4 rounded-xl bg-[#F5F2EB] border border-[#E7E2DA] space-y-3 mt-4">
-                    <div className="text-xs font-mono text-[#C85A32] uppercase font-bold tracking-wider">
+                    <div className="font-pixel text-xs text-[#C85A32] uppercase font-bold tracking-wider">
                       Điểm nhấn chiến lược (PESO Model)
                     </div>
                     <p className="text-sm text-[#44403C] leading-relaxed">
@@ -175,7 +175,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               {/* Sidebar Info */}
               <div className="md:col-span-4 space-y-5 p-5 rounded-2xl bg-[#F5F2EB] border border-[#E7E2DA]">
                 <div>
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#78716C] block mb-1">
+                  <span className="text-[11px] uppercase tracking-wider text-[#78716C] font-semibold block mb-1">
                     Phần mềm / Công cụ
                   </span>
                   <span className="text-sm font-semibold text-[#C85A32]">{project.software}</span>
@@ -183,7 +183,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
                 {project.duration && (
                   <div>
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#78716C] block mb-1">
+                    <span className="text-[11px] uppercase tracking-wider text-[#78716C] font-semibold block mb-1">
                       Thời lượng
                     </span>
                     <span className="text-sm font-semibold text-[#1C1917]">{project.duration}</span>
@@ -191,14 +191,14 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 )}
 
                 <div>
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#78716C] block mb-2">
+                  <span className="text-[11px] uppercase tracking-wider text-[#78716C] font-semibold block mb-2">
                     Kỹ thuật & Trọng tâm
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {(project.focus || []).map((pt: string, i: number) => (
                       <span
                         key={i}
-                        className="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#E7E2DA] text-[11px] font-mono text-[#44403C]"
+                        className="px-2.5 py-1 rounded-md bg-[#FAF7F2] border border-[#E7E2DA] text-[11px] font-medium text-[#44403C]"
                       >
                         {pt}
                       </span>
@@ -210,7 +210,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           </div>
 
           {/* Footer */}
-          <div className="px-6 py-3.5 border-t border-[#E7E2DA] bg-[#F5F2EB] flex items-center justify-between text-xs text-[#78716C] font-mono">
+          <div className="px-6 py-3.5 border-t border-[#E7E2DA] bg-[#F5F2EB] flex items-center justify-between text-xs text-[#78716C] font-medium">
             <span>Bấm ESC hoặc nhấp ra ngoài để đóng</span>
             <button
               onClick={onClose}

@@ -58,10 +58,10 @@ export const MediaModal: React.FC<MediaModalProps> = ({
             {/* Modal Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#162036]/60">
               <div>
-                <span className="font-mono text-xs uppercase tracking-wider text-[#F0B7D8] block">
+                <span className="font-pixel text-xs font-semibold uppercase tracking-wider text-[#F0B7D8] block">
                   {category}
                 </span>
-                <h3 className="font-serif text-lg md:text-xl font-bold text-white">
+                <h3 className="font-serif text-lg md:text-xl font-bold tracking-tight text-white">
                   {title}
                 </h3>
               </div>
@@ -80,7 +80,7 @@ export const MediaModal: React.FC<MediaModalProps> = ({
             {/* Modal Body / Image View */}
             <div className="flex-1 overflow-auto p-4 sm:p-6 flex flex-col items-center justify-center bg-[#090D16]">
               {placeholderText && (
-                <div className="mb-4 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-xs font-mono text-[#F0B7D8]">
+                <div className="mb-4 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-xs font-medium text-[#F0B7D8]">
                   {placeholderText}
                 </div>
               )}
@@ -94,20 +94,20 @@ export const MediaModal: React.FC<MediaModalProps> = ({
                   />
                 </div>
               ) : (
-                <div className="py-20 text-center text-white/60 font-sans text-sm">
+                <div className="py-20 text-center text-white/60 text-sm font-normal">
                   Đang chuẩn bị nội dung hiển thị chi tiết...
                 </div>
               )}
 
               {note && (
-                <p className="mt-4 text-xs font-mono text-white/50 text-center italic">
+                <p className="mt-4 text-xs text-white/50 text-center italic font-normal">
                   {note}
                 </p>
               )}
             </div>
 
             {/* Modal Footer */}
-            <div className="px-6 py-3.5 border-t border-white/10 bg-[#162036]/60 flex items-center justify-between text-xs text-white/60 font-sans">
+            <div className="px-6 py-3.5 border-t border-white/10 bg-[#162036]/60 flex items-center justify-between text-xs text-white/60 font-normal">
               <span>Nhấn phím ESC hoặc bấm ra ngoài để đóng</span>
               <button
                 onClick={onClose}

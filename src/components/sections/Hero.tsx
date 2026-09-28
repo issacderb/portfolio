@@ -77,23 +77,23 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
           </div>
 
           {/* Large Editorial Name with fluid clamp to avoid overflow on 320px while staying bold and dramatic */}
-          <h1 className="font-serif text-[clamp(2.1rem,8.2vw,4.6rem)] font-bold tracking-tight text-[#FFF7E8] leading-[1.02] drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+          <h1 className="text-[clamp(2.1rem,8.2vw,4.6rem)] font-extrabold tracking-tight text-[#FFF7E8] leading-[1.02] drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
             VƯƠNG <br />
             THÀNH TRUNG
           </h1>
 
           {/* Subtitle & Positioning */}
           <div className="space-y-1 sm:space-y-1.5 pt-0.5 sm:pt-1">
-            <p className="font-pixel text-xs sm:text-sm font-semibold tracking-wider text-[#E87642] uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+            <p className="font-pixel text-xs sm:text-sm tracking-widest text-[#E87642] uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
               {authorData.major}
             </p>
-            <p className="font-serif italic text-base sm:text-xl lg:text-2xl text-[#FFF7E8]/95 font-normal leading-snug drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
+            <p className="font-serif italic font-medium text-base sm:text-xl lg:text-2xl text-[#FFF7E8]/95 leading-snug drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
               "{authorData.positioning}"
             </p>
           </div>
 
           {/* Short description */}
-          <p className="text-xs sm:text-sm lg:text-base text-[#FFF7E8]/85 max-w-md leading-relaxed font-sans font-light drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
+          <p className="text-xs sm:text-sm lg:text-base text-[#FFF7E8]/85 max-w-md leading-relaxed font-light drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
             {authorData.intro}
           </p>
 
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2 z-40">
             <a
               href="#projects"
-              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#10182B] hover:bg-[#E87642] text-[#FFF7E8] border border-[#FFF7E8]/20 font-pixel text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-md hover:border-transparent active:scale-95"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#10182B] hover:bg-[#E87642] text-[#FFF7E8] border border-[#FFF7E8]/20 text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-md hover:border-transparent active:scale-95"
             >
               <span>XEM DỰ ÁN</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
 
             <button
               onClick={onDownloadCv}
-              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-black/40 hover:bg-[#FFF7E8]/10 text-[#FFF7E8] border border-[#FFF7E8]/40 hover:border-[#FFF7E8] font-pixel text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-xs active:scale-95"
+              className="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-black/40 hover:bg-[#FFF7E8]/10 text-[#FFF7E8] border border-[#FFF7E8]/40 hover:border-[#FFF7E8] text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2 shadow-xs active:scale-95"
             >
               <span>TẢI CV</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="flex flex-col items-center"
           >
-            <span className="font-pixel text-[9px] tracking-[0.2em] uppercase opacity-80 group-hover:opacity-100 mb-0.5">
+            <span className="font-pixel text-[10px] tracking-widest uppercase opacity-80 group-hover:opacity-100 mb-0.5">
               Cuộn xuống
             </span>
             <svg className="w-3.5 h-3.5 text-[#FFF7E8]/75" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
         </a>
 
         {/* Metadata + Audio toggle */}
-        <div className="w-full pt-2.5 sm:pt-3 border-t border-[#FFF7E8]/15 flex flex-col sm:flex-row items-center justify-between text-xs font-pixel text-[#FFF7E8]/75 gap-2.5 sm:gap-3">
+        <div className="w-full pt-2.5 sm:pt-3 border-t border-[#FFF7E8]/15 flex flex-col sm:flex-row items-center justify-between text-xs font-medium text-[#FFF7E8]/75 tracking-wider uppercase gap-2.5 sm:gap-3">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)] text-[11px] sm:text-xs text-center sm:text-left">
             <span>{authorData.university.toUpperCase()} · GPA {authorData.gpa}</span>
             <span className="hidden sm:inline text-[#FFF7E8]/30">|</span>
@@ -160,7 +160,7 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadCv }) => {
           {/* Audio toggle */}
           <button
             onClick={toggleAudio}
-            className="px-3 py-1 rounded-full bg-[#10182B]/80 hover:bg-[#10182B] text-[#FFF7E8]/90 hover:text-[#FFF7E8] font-pixel text-[11px] tracking-wider transition-colors flex items-center space-x-1.5 cursor-pointer shadow-xs border border-[#FFF7E8]/20"
+            className="px-3 py-1 rounded-full bg-[#10182B]/80 hover:bg-[#10182B] text-[#FFF7E8]/90 hover:text-[#FFF7E8] text-[10px] font-pixel tracking-wider uppercase transition-colors flex items-center space-x-1.5 cursor-pointer shadow-xs border border-[#FFF7E8]/20"
             title={isMuted ? "Bật âm thanh nền (8% âm lượng)" : "Tắt tiếng"}
           >
             <span>{isMuted ? "🔇 SOUND: OFF" : "🔊 SOUND: 8%"}</span>

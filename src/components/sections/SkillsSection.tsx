@@ -44,40 +44,40 @@ export const SkillsSection: React.FC = () => {
         {/* Section Masthead */}
         <div className="border-b border-[#E7E2DA] pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="font-pixel text-xs tracking-wider uppercase text-[#78716C] block">
-              03 / KỸ NĂNG & CÔNG CỤ
+            <span className="font-pixel text-xs tracking-widest text-[#C85A32] uppercase block">
+              [ 02 / KỸ NĂNG & CÔNG CỤ ]
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917]">
               Năng lực & Công cụ
             </h2>
           </div>
-          <p className="font-serif italic text-base sm:text-lg text-[#57534E] max-w-md">
+          <p className="font-serif italic font-medium text-base sm:text-lg text-[#57534E] max-w-md">
             "Kết hợp tư duy báo chí truyền thông với kỹ năng thực chiến về video, hậu kỳ và thiết kế trực quan."
           </p>
         </div>
 
         {/* Editorial Architecture: Capabilities & Tools (Left) | Asset 003 (Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start font-sans">
           {/* Left Column: 6 Capabilities & 4 Tools */}
           <div className="lg:col-span-6 space-y-10">
             {/* 6 Capabilities */}
             <div className="space-y-6">
-              <span className="font-pixel text-xs uppercase tracking-wider text-[#C85A32] font-semibold block">
+              <span className="font-pixel text-xs uppercase tracking-widest text-[#C85A32] font-semibold block">
                 CÁC MẢNG NĂNG LỰC CHUYÊN MÔN
               </span>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 pt-2">
                 {capabilities.map((cap) => (
                   <div key={cap.num} className="space-y-1.5 border-t border-[#E7E2DA] pt-3.5">
-                    <div className="flex items-center space-x-2 text-xs font-pixel text-[#78716C]">
-                      <span className="text-[#C85A32] font-semibold">{cap.num}</span>
+                    <div className="flex items-center space-x-2 text-xs font-semibold text-[#78716C]">
+                      <span className="font-pixel text-[#C85A32] font-bold text-sm">{cap.num}</span>
                       <span>/</span>
-                      <span className="uppercase tracking-wider">LĨNH VỰC</span>
+                      <span className="font-pixel text-[10px] tracking-wider uppercase text-[#78716C]">LĨNH VỰC</span>
                     </div>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1C1917]">
+                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-[#1C1917]">
                       {cap.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed font-sans font-light">
+                    <p className="text-xs sm:text-sm text-[#57534E] leading-relaxed font-light">
                       {cap.desc}
                     </p>
                   </div>
@@ -87,7 +87,7 @@ export const SkillsSection: React.FC = () => {
 
             {/* 4 Software Tools */}
             <div className="pt-4 border-t border-[#E7E2DA] space-y-4">
-              <span className="font-pixel text-xs uppercase tracking-wider text-[#C85A32] font-semibold block">
+              <span className="font-pixel text-xs uppercase tracking-widest text-[#C85A32] font-semibold block">
                 CÔNG CỤ THỰC CHIẾN
               </span>
 
@@ -105,10 +105,10 @@ export const SkillsSection: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <h4 className="font-serif text-sm font-bold text-[#1C1917] leading-tight">
+                      <h4 className="text-sm font-bold text-[#1C1917] leading-tight">
                         {tool.name}
                       </h4>
-                      <p className="font-sans text-[11px] text-[#78716C]">
+                      <p className="text-[11px] text-[#78716C] font-normal">
                         {tool.category}
                       </p>
                     </div>
@@ -126,12 +126,12 @@ export const SkillsSection: React.FC = () => {
                 alt="Quy trình sản xuất đa phương tiện 7 bước - Vương Thành Trung"
                 className="w-full h-auto object-contain block"
               />
-              <div className="absolute bottom-4 left-4 sm:left-6 px-3.5 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md text-white font-pixel text-[11px] tracking-wider pointer-events-none border border-white/10">
-                Quy trình sáng tạo: IDEA → SCRIPT → SHOOT → EDIT → COLOR → SOUND → PUBLISH
+              <div className="absolute bottom-4 left-4 sm:left-6 px-3.5 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-pixel tracking-wider uppercase pointer-events-none border border-white/10">
+                Quy trình: IDEA → SCRIPT → SHOOT → EDIT → COLOR → SOUND → PUBLISH
               </div>
             </div>
 
-            <p className="mt-4 text-xs font-pixel text-[#78716C] tracking-wide leading-relaxed">
+            <p className="mt-4 text-xs font-normal text-[#78716C] tracking-normal leading-relaxed">
               * Quy trình làm việc thực chiến kết hợp liên hoàn giữa kịch bản, quay chụp, dựng DaVinci Resolve, xử lý hình ảnh Photoshop và hoàn thiện xuất bản trên Canva.
             </p>
           </div>

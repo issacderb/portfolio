@@ -50,7 +50,7 @@ export const App: React.FC = () => {
 
       {/* CV Notification Toast */}
       {cvNotification && (
-        <div className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-full bg-[#1C1917] text-white text-xs font-mono shadow-2xl flex items-center space-x-3">
+        <div className="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-full bg-[#1C1917] text-white text-xs font-medium shadow-2xl flex items-center space-x-3">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
           <span>{cvNotification}</span>
         </div>

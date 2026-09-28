@@ -10,10 +10,10 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
         {/* Section Masthead */}
         <div className="max-w-3xl space-y-3">
-          <span className="font-pixel text-xs tracking-wider uppercase text-[#78716C] block">
-            01 / VỀ TÔI
+          <span className="font-pixel text-xs tracking-widest text-[#C85A32] uppercase block">
+            [ 01 / VỀ TÔI ]
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1C1917] leading-[1.12]">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917] leading-[1.12]">
             Kể chuyện bằng hình ảnh, video & thiết kế.
           </h2>
         </div>
@@ -22,17 +22,17 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left: Text Block */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
-            <div className="space-y-6 text-base sm:text-lg text-[#44403C] leading-relaxed font-sans font-light">
+            <div className="space-y-6 text-base sm:text-lg text-[#44403C] leading-relaxed font-light font-sans">
               <p>{authorData.aboutP1}</p>
               <p>{authorData.aboutP2}</p>
             </div>
 
             {/* University & GPA details */}
-            <div className="pt-6 border-t border-[#E7E2DA] space-y-1.5 font-pixel">
-              <div className="text-xs sm:text-sm font-semibold tracking-wider text-[#1C1917] uppercase">
+            <div className="pt-6 border-t border-[#E7E2DA] space-y-1.5 font-sans">
+              <div className="text-xs sm:text-sm font-bold tracking-wider text-[#1C1917] uppercase">
                 {authorData.university}
               </div>
-              <div className="text-xs tracking-wider text-[#78716C]">
+              <div className="text-xs font-medium tracking-wide text-[#78716C]">
                 Chuyên ngành Truyền thông đa phương tiện · GPA {authorData.gpa}
               </div>
             </div>
@@ -46,7 +46,7 @@ export const AboutSection: React.FC = () => {
                 alt="Không gian nghiên cứu & Phát triển ý tưởng - Vương Thành Trung"
                 className="w-full h-auto object-contain block"
               />
-              <div className="absolute bottom-4 left-4 sm:left-6 px-3.5 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md text-white font-pixel text-[11px] tracking-wider pointer-events-none border border-white/10">
+              <div className="absolute bottom-4 left-4 sm:left-6 px-3.5 py-1.5 rounded-full bg-[#1C1917]/85 backdrop-blur-md text-white text-[10px] sm:text-[11px] font-pixel tracking-wider uppercase pointer-events-none border border-white/10">
                 Không gian nghiên cứu & Phát triển ý tưởng · Học viện Báo chí
               </div>
             </div>

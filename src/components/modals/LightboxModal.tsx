@@ -62,16 +62,16 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#E7E2DA] bg-[#F5F2EB] shrink-0">
             <div className="flex items-center space-x-3">
               {badge && (
-                <span className="px-2.5 py-1 rounded bg-[#1C1917] font-mono text-[11px] font-semibold text-white uppercase tracking-wider">
+                <span className="font-pixel px-2.5 py-1 rounded bg-[#1C1917] text-[11px] font-bold text-white uppercase tracking-wider">
                   {badge}
                 </span>
               )}
               <div>
-                <h3 className="font-serif text-lg font-bold text-[#1C1917] leading-tight">
+                <h3 className="font-serif text-lg font-bold tracking-tight text-[#1C1917] leading-tight">
                   {title}
                 </h3>
                 {subtitle && (
-                  <p className="font-sans text-xs text-[#78716C] leading-snug">
+                  <p className="text-xs text-[#78716C] leading-snug font-normal">
                     {subtitle}
                   </p>
                 )}
@@ -84,7 +84,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
                   href={externalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-1.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs uppercase tracking-wider transition-colors inline-flex items-center space-x-1.5"
+                  className="px-4 py-1.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white text-xs font-semibold uppercase tracking-wider transition-colors inline-flex items-center space-x-1.5"
                 >
                   <span>{actionLabel || 'MỞ LIÊN KẾT'}</span>
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

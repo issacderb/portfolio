@@ -23,27 +23,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onDownloadCv }) 
         {/* Left Column: Contact Information (~45-50% desktop width) */}
         <div className="lg:col-span-6 flex flex-col justify-between space-y-8">
           <div className="space-y-6">
-            <span className="font-mono text-xs tracking-widest uppercase text-[#78716C] block">
-              04 / LIÊN HỆ
+            <span className="font-pixel text-xs tracking-widest text-[#C85A32] uppercase block">
+              [ 04 / LIÊN HỆ ]
             </span>
 
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#1C1917] leading-tight">
               Cùng kết nối nhé!
             </h2>
 
-            <p className="text-base sm:text-lg text-[#57534E] font-sans font-light max-w-lg leading-relaxed">
+            <p className="text-base sm:text-lg text-[#57534E] font-light max-w-lg leading-relaxed">
               Mình luôn sẵn sàng trao đổi về cơ hội thực tập, hợp tác hoặc những dự án truyền thông thú vị.
             </p>
 
             {/* Direct Editorial Contact Info */}
             <div className="space-y-5 pt-2">
               <div className="space-y-1">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#78716C] block font-semibold">
+                <span className="text-xs uppercase tracking-wider text-[#78716C] block font-semibold">
                   Email
                 </span>
                 <a
                   href={`mailto:${authorData.email}`}
-                  className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#1C1917] hover:text-[#C85A32] transition-colors break-all block"
+                  className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-[#1C1917] hover:text-[#C85A32] transition-colors break-all block"
                 >
                   {authorData.email}
                 </a>
@@ -51,25 +51,25 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onDownloadCv }) 
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-[#E7E2DA]">
                 <div className="space-y-1">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#78716C] block font-semibold">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] block font-semibold">
                     Số điện thoại / Zalo
                   </span>
                   <a
                     href={`tel:${authorData.phone}`}
-                    className="font-mono text-sm sm:text-base font-semibold text-[#1C1917] hover:text-[#C85A32] transition-colors"
+                    className="text-base sm:text-lg font-medium text-[#1C1917] hover:text-[#C85A32] transition-colors"
                   >
                     {authorData.phone}
                   </a>
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#78716C] block font-semibold">
+                  <span className="text-xs uppercase tracking-wider text-[#78716C] block font-semibold">
                     Học vấn
                   </span>
-                  <span className="text-xs sm:text-sm font-sans text-[#57534E] block">
+                  <span className="text-sm sm:text-base font-normal text-[#57534E] leading-relaxed block">
                     {authorData.university}
                   </span>
-                  <span className="text-xs font-mono text-[#78716C] block">
+                  <span className="text-xs sm:text-sm font-medium text-[#78716C] block">
                     GPA {authorData.gpa}
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onDownloadCv }) 
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
               href={`mailto:${authorData.email}`}
-              className="px-8 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white font-mono text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm flex items-center space-x-2"
+              className="px-8 py-3.5 rounded-full bg-[#1C1917] hover:bg-[#C85A32] text-white text-xs font-semibold tracking-wider uppercase transition-colors shadow-sm flex items-center space-x-2"
             >
               <span>GỬI EMAIL</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onDownloadCv }) 
 
             <button
               onClick={onDownloadCv}
-              className="px-8 py-3.5 rounded-full bg-transparent hover:bg-[#1C1917] text-[#1C1917] hover:text-white border border-[#1C1917]/30 hover:border-[#1C1917] font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2"
+              className="px-8 py-3.5 rounded-full bg-transparent hover:bg-[#1C1917] text-[#1C1917] hover:text-white border border-[#1C1917]/30 hover:border-[#1C1917] text-xs font-semibold tracking-wider uppercase transition-all duration-200 cursor-pointer flex items-center space-x-2"
             >
               <span>TẢI CV</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,7 +101,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onDownloadCv }) 
 
             <button
               onClick={handleCopyEmail}
-              className="px-4 py-3.5 rounded-full text-xs font-mono text-[#78716C] hover:text-[#1C1917] transition-colors cursor-pointer"
+              className="px-4 py-3.5 rounded-full text-xs font-medium text-[#78716C] hover:text-[#1C1917] transition-colors cursor-pointer"
             >
               {copied ? '✓ Đã sao chép' : 'Sao chép email'}
             </button>

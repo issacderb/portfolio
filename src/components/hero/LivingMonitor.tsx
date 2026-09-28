@@ -23,13 +23,13 @@ export const LivingMonitor: React.FC = () => {
   return (
     <div className="relative w-full h-full bg-[#121214] rounded-[2px] overflow-hidden flex flex-col justify-between p-1 select-none shadow-[0_0_25px_rgba(255,180,110,0.22)] border border-[#222]">
       {/* Top Bar: DaVinci Resolve / Premiere Header */}
-      <div className="flex items-center justify-between px-1.5 py-0.5 border-b border-white/10 bg-[#1A1A1E] text-[7px] font-mono text-[#8E8E93]">
+      <div className="flex items-center justify-between px-1.5 py-0.5 border-b border-white/10 bg-[#1A1A1E] text-[7px] font-pixel text-[#8E8E93]">
         <div className="flex items-center space-x-1">
           <span className="w-1 h-1 rounded-full bg-[#E07A5F]" />
           <span className="text-white/80 font-semibold tracking-wider">DAVINCI RESOLVE</span>
           <span className="text-white/40">· Project_Final_v3</span>
         </div>
-        <div className="flex items-center space-x-1 text-emerald-400 font-mono">
+        <div className="flex items-center space-x-1 text-emerald-400 font-pixel tracking-wider">
           <span className="w-1 h-1 rounded-full bg-emerald-400 animate-ping" />
           <span>{timecode}</span>
         </div>
@@ -48,11 +48,11 @@ export const LivingMonitor: React.FC = () => {
         />
 
         {/* Cinematic Preview Overlay Details */}
-        <div className="absolute top-1 left-1.5 px-1 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[6px] font-mono text-white/90">
+        <div className="absolute top-1 left-1.5 px-1 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[6px] font-pixel text-white/90">
           REC · 4K 24fps · ProRes 422
         </div>
 
-        <div className="absolute bottom-1 right-1.5 flex items-center space-x-1 px-1 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[6px] font-mono text-white/80">
+        <div className="absolute bottom-1 right-1.5 flex items-center space-x-1 px-1 py-0.5 rounded bg-black/60 backdrop-blur-xs text-[6px] font-pixel text-white/80">
           <span>LUT: Golden_Film_Grade</span>
         </div>
 
@@ -74,7 +74,7 @@ export const LivingMonitor: React.FC = () => {
       <div className="relative h-[38%] bg-[#18181C] border-t border-white/10 px-1 py-0.5 flex flex-col justify-between overflow-hidden">
         {/* Track V2 */}
         <div className="relative h-2 w-full bg-[#202026] rounded-[1px] overflow-hidden flex items-center mb-0.5">
-          <span className="text-[5px] font-mono text-white/40 pl-0.5 pr-1 shrink-0">V2</span>
+          <span className="text-[5px] font-pixel text-white/50 pl-0.5 pr-1 shrink-0">V2</span>
           <div className="flex-1 h-full flex items-center space-x-0.5">
             <div className="w-[30%] h-full bg-[#A855F7]/80 rounded-[1px] border border-[#C084FC]/60" />
             <div className="w-[45%] h-full bg-[#EC4899]/80 rounded-[1px] border border-[#F472B6]/60" />
@@ -83,7 +83,7 @@ export const LivingMonitor: React.FC = () => {
 
         {/* Track V1 */}
         <div className="relative h-2 w-full bg-[#202026] rounded-[1px] overflow-hidden flex items-center mb-0.5">
-          <span className="text-[5px] font-mono text-white/40 pl-0.5 pr-1 shrink-0">V1</span>
+          <span className="text-[5px] font-pixel text-white/50 pl-0.5 pr-1 shrink-0">V1</span>
           <div className="flex-1 h-full flex items-center space-x-0.5">
             <div className="w-[20%] h-full bg-[#3B82F6]/80 rounded-[1px] border border-[#60A5FA]/60" />
             <div className="w-[35%] h-full bg-[#06B6D4]/80 rounded-[1px] border border-[#22D3EE]/60" />
@@ -93,7 +93,7 @@ export const LivingMonitor: React.FC = () => {
 
         {/* Track A1 (Audio Waveforms) */}
         <div className="relative h-2 w-full bg-[#202026] rounded-[1px] overflow-hidden flex items-center">
-          <span className="text-[5px] font-mono text-white/40 pl-0.5 pr-1 shrink-0">A1</span>
+          <span className="text-[5px] font-pixel text-white/50 pl-0.5 pr-1 shrink-0">A1</span>
           <div className="flex-1 h-full flex items-center space-x-0.5">
             <div className="w-[50%] h-full bg-[#10B981]/70 rounded-[1px] border border-[#34D399]/60 flex items-center justify-around px-0.5">
               <span className="w-[1px] h-1 bg-white/40" />
